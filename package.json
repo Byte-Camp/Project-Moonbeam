@@ -1,15 +1,24 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "description": "Starter for your Electron application",
+  "name": "project-moonbeam",
+  "productName": "Project Moonbeam",
+  "description": "Stop Motion Animation Software",
   "version": "0.0.0",
-  "author": "Mr. Gumby <mr.gumby@example.com>",
-  "copyright": "© 2016, Gumby inc.",
-  "homepage": "http://example.com",
-  "license": "MIT",
+  "contributors": [
+		{
+			"name": "Brandon Cathcart",
+			"email": "cathcart.brandon@gmail.com"
+		},
+		{
+			"name": "Adar Guy",
+			"email": "adarguy10@gmail.com"
+		}
+	],
+  "copyright": "© 2017, Brandon Cathcart and Adar Guy",
+  "homepage": "",
+  "license": "Apache2",
   "main": "app/background.js",
   "build": {
-    "appId": "com.example.electron-boilerplate",
+    "appId": "com.electron.${name}",
     "files": [
       "app/**/*",
       "node_modules/**/*",
