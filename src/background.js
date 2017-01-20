@@ -12,12 +12,12 @@ import { editMenuTemplate } from './menu/edit_menu_template';
 import createWindow from './helpers/window';
 
 var mainWindow;
-// Dev variable 
+// Dev variable
 var dev = true;
 
 var setApplicationMenu = function() {
 	var menus = [editMenuTemplate];
-	if (env.name !== 'production') {
+	if (dev === true) {
 		menus.push(devMenuTemplate);
 	}
 	Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
@@ -26,9 +26,11 @@ var setApplicationMenu = function() {
 // Save userData in separate folders for each environment.
 // Thanks to this you can use production and development versions of the app
 // on same machine like those are two separate apps.
-if (env.name !== 'production') {
-	var userDataPath = app.getPath('userData');
-	app.setPath('userData', userDataPath + ' (' + env.name + ')');
+var userDataPath = app.getPath('userData');
+if (dev === true) {
+	app.setPath('userData', userDataPath + ' (dev)');
+} else {
+	app.setPath('userData', userDataPath + ' (prod)');
 }
 
 app.on('ready', function() {
@@ -45,7 +47,7 @@ app.on('ready', function() {
 		slashes: true
 	}));
 
-	if (env.name === 'development') {
+	if (dev === true) {
 		mainWindow.openDevTools();
 	}
 });

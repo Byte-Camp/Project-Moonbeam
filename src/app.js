@@ -21,7 +21,7 @@ $('#snapButton').click(function(){
 	Webcam.snap( function(data_uri) {
 		let dataURI = data_uri;
 		// It will create the full path in case it doesn't exist
-		let filePath = './out/test.png';
+		let filePath = './test_images/test.png';
 		// Returns a Promise
 		convertURI.outputFile(dataURI, filePath)
 		// RETURNS image path of the created file 'out/path/fileName.png'
