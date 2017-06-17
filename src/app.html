@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Project Moonbeam</title>
+
+		<link rel="stylesheet" href="./../node_modules/bulma/css/bulma.css">
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+
+		<!--<script src="helpers/context_menu.js"></script>-->
+	</head>
+
+	<body>
+
+		<div class="webcamBox">
+			<div id='webcam'></div>
+			<div class="block">
+				<button id="snapButton" class='button is-black'>Snap</button>
+				<button id="snapButton" class='button is-black'>Snap</button>
+				<button id="snapButton" class='button is-black'>Snap</button>
+			</div>
+
+		</div>
+
+		<div id='timelineBox'>
+			<div class="box" id='timeline'>
+				<div class="timelinePhoto">
+
+				</div>
+			</div>
+		</div>
+
+		<script>
+			if (typeof module === 'object') {
+				window.module = module;
+				module = undefined;
+			}
+		</script>
+		<script src="js/vendor/jquery-3.1.1.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="helpers/external_links.js"></script>
+		<script>
+			if (window.module) module = window.module;
+		</script>
+	</body>
+
+</html>

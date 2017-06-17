@@ -1,10 +1,10 @@
 /* jshint esversion: 6 */
-import { remote } from 'electron'; // native electron module
-import jetpack from 'fs-jetpack'; // module loaded from npm
+const remote = require('electron').remote; // native electron module
+const jetpack = require('fs-jetpack'); // module loaded from npm
 
 var app = remote.app;
 var appDir = jetpack.cwd(app.getAppPath());
-const Webcam = require('./vendor/webcam.min');
+const Webcam = require('./js/vendor/webcam.min');
 const convertURI = require('image-data-uri');
 
 // When the document loads, attach the webcam with the appropriate settings
@@ -13,6 +13,7 @@ $(document).ready(function() {
 		"image_format":"png",
 		"flip_horiz": true
 	});
+	
 	Webcam.attach('#webcam');
 });
 
